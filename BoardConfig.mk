@@ -1,42 +1,30 @@
+
 DEVICE_PATH := device/infinix/x6835b
 
-# مواصفات المعالج والهندسة (حل مشكلة 64-بت)
+# إعدادات النواة (حل مشكلة Missing Kernel)
+TARGET_NO_KERNEL := false
+BOARD_KERNEL_IMAGE_NAME := kernel
+BOARD_USES_RECOVERY_AS_BOOT := true
+
+# مواصفات المعالج والهندسة
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
 TARGET_SUPPORTS_64_BIT_APPS := true
 
-# إعدادات النواة والكيرنل (حل خطأ IMAGE_NAME و DTB)
-BOARD_KERNEL_IMAGE_NAME := Image.gz
-TARGET_NO_KERNEL := false
-BOARD_USES_RECOVERY_AS_BOOT := true
+# إعدادات الذاكرة والكيرنل (MT6765)
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x11080000
-BOARD_KERNEL_TAGS_OFFSET := 0x07080000
+BOARD_TAGS_OFFSET := 0x07080000
 
-# إعدادات الشاشة والواجهة (حل خطأ UI/Theme)
+# إعدادات الشاشة والواجهة
 TARGET_SCREEN_HEIGHT := 1640
 TARGET_SCREEN_WIDTH := 720
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := 1.0_Ehab
 
-# إعدادات المساحة والتخزين (تجنب خطأ الحجم الزائد)
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_FLASH_BLOCK_SIZE := 131072
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-
-# إضافات TWRP الضرورية (تجنب أخطاء المكتبات)
-TW_INCLUDE_CRYPTO := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_EXTRA_LANGUAGES := true
-TW_INCLUDE_NTFS_3G := true
-
-# إعدادات الأزرار واللمس
+# إعدادات البناء
 BOARD_HAS_NO_SELECT_BUTTON := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
