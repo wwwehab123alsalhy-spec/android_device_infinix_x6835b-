@@ -4,6 +4,7 @@ DEVICE_PATH := device/infinix/x6835b
 # إعدادات النواة (حل مشكلة Missing Kernel)
 TARGET_NO_KERNEL := false
 BOARD_KERNEL_IMAGE_NAME := kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # مواصفات المعالج والهندسة
