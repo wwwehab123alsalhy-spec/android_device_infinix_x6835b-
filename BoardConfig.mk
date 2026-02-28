@@ -29,6 +29,5 @@ TW_THEME := portrait_hdpi
 # إعدادات البناء
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-
-BOARD_HAS_NO_REAL_VENDOR_PARTITION := true
-BOARD_RECOVERY_DEVICE_DIRS += device/infinix/x6835b
+BOARD_RECOVERY_DEVICE_DIRS := $(DEVICE_PATH)
+TARGET_RECOVERY_ROOT_OUT := out/target/product/x6835b/recovery/root
